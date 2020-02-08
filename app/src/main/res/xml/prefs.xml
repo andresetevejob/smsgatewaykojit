@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="enabled"
+        android:title="Activer SelfcareSms"
+        android:defaultValue='false'
+        android:summaryOn="Les nouveaux messages seront transferes du telephone vers le serveur"
+        android:summaryOff="Les nouveaux messages ne seront pas transferes du telephone vers le serveur"
+        ></CheckBoxPreference>
+    <PreferenceCategory android:title="Parametres du serveur">
+
+    <EditTextPreference
+        android:key="server_url"
+        android:title="Server URL"
+        android:inputType="textUri"
+        android:defaultValue=""
+        android:dependency="enabled"
+        ></EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Gestion des sms">
+
+        <CheckBoxPreference
+            android:key="history_sms"
+            android:title="Activer SelfcareSms"
+            android:defaultValue='false'
+            android:dependency="enabled"
+            android:summaryOn="Les anciens messages seront transferes du telephone vers le serveur"
+            android:summaryOff="Les anciens messages ne seront pas transferes du telephone vers le serveur"
+            ></CheckBoxPreference>
+
+        <EditTextPreference
+            android:key="history_time"
+            android:title="Temps historique"
+            android:inputType="number"
+            android:defaultValue=""
+            android:dependency="history_sms"
+            ></EditTextPreference>
+
+    </PreferenceCategory>
+</PreferenceScreen>
